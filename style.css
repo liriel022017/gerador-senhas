@@ -1,0 +1,310 @@
+/* Zera margens e paddings para todos os elementos, define box-sizing para facilitar o controle do tamanho,
+   e escolhe a fonte padrão da aplicação */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilização básica do body, com fundo claro e texto escuro,
+   além de centralizar o conteúdo e definir transições suaves para cores */
+   
+body {
+  background-color: #f9f9f9;
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Tema escuro: fundo escuro e texto claro */
+
+.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+/* Caixa principal do app com largura máxima, fundo branco,
+   cantos arredondados, sombra leve e espaçamento interno */
+
+.container {
+  max-width: 480px;
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Container no tema escuro com fundo mais escuro */
+
+.dark-mode .container {
+  background: #1e1e1e;
+}
+
+/* Estilo para o select de idioma */
+
+#language-select {
+  padding: 6px 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  background: #fff;
+  color: #222;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Select no tema escuro */
+
+.dark-mode #language-select {
+  background: #333;
+  color: #eee;
+  border-color: #555;
+  outline: none;
+}
+
+/* Botão para alternar tema, simples e com cursor pointer */
+
+#theme-toggle {
+  cursor: pointer;
+  font-size: 1.3rem;
+  margin-left: 15px;
+  background: none;
+  border: none;
+  color: inherit;
+  vertical-align: middle;
+}
+
+/* Títulos principais e secundários centralizados, com espaçamento abaixo e fonte em negrito */
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+/* Título secundário menor e com espaçamento acima */
+
+h2 {
+  font-size: 1.3rem;
+  margin-top: 20px;
+}
+
+/* Agrupa cada opção do formulário em linha com espaçamento abaixo */
+
+.form-group {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+/* Checkbox com espaçamento à direita e cursor pointer para indicar que pode clicar */
+
+.form-group input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Rótulos com cursor pointer e que ocupam o espaço restante da linha */
+
+.form-group label {
+  cursor: pointer;
+  flex: 1;
+  user-select: none;
+}
+
+/* Input para comprimento da senha: tamanho fixo, centralizado e estilizado */
+
+#length {
+  width: 60px;
+  padding: 6px 8px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  text-align: center;
+  background: #fff;
+  color: #222;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Input no tema escuro */
+
+.dark-mode #length {
+  background: #333;
+  color: #eee;
+  border-color: #555;
+  outline: none;
+}
+
+/* Botões com cor vermelha característica, texto branco, cantos arredondados, e efeito hover */
+
+button {
+  cursor: pointer;
+  background-color: #d32f2f; /* Vermelho tipo LastPass */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  margin: 5px 8px 5px 0;
+  transition: background-color 0.25s ease;
+  user-select: none;
+}
+
+/* Mudança de cor ao passar o mouse */
+
+button:hover {
+  background-color: #b71c1c;
+}
+
+/* Botão desabilitado fica cinza e sem cursor pointer */
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Botões no tema escuro com cores ajustadas */
+
+.dark-mode button {
+  background-color: #ef5350;
+}
+
+.dark-mode button:hover {
+  background-color: #c62828;
+}
+
+/* Caixa que mostra a senha gerada, com fonte monoespaçada e fundo claro */
+
+#password-display {
+  margin-top: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.3rem;
+  background-color: #eee;
+  color: #222;
+  padding: 10px 12px;
+  border-radius: 6px;
+  user-select: all; /* Permite copiar facilmente */
+  -webkit-user-select: all;
+  word-break: break-all;
+  min-height: 40px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Display da senha no tema escuro */
+
+.dark-mode #password-display {
+  background-color: #333;
+  color: #eee;
+}
+
+/* Texto que mostra o nível de segurança da senha */
+
+#strength {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Container que agrupa botões e controles em linha, podendo quebrar linha */
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 15px;
+}
+
+/* Área que mostra as cartas do jogo da memória em grid responsivo */
+
+#memory-game {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 15px;
+}
+
+/* Estilo básico das cartas do jogo */
+
+.memory-card {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  cursor: pointer;
+  padding: 15px;
+  font-size: 0.95rem;
+  text-align: center;
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cartas que já foram encontradas ficam verdes e com texto mais forte */
+
+.memory-card.matched {
+  background-color: #a5d6a7; /* Verde suave para pares encontrados */
+  color: #1b5e20;
+  cursor: default;
+  font-weight: 700;
+}
+
+/* Efeito hover para cartas não encontradas */
+
+.memory-card:hover:not(.matched) {
+  background-color: #ef9a9a;
+  color: #b71c1c;
+}
+
+/* Cartas no tema escuro */
+
+.dark-mode .memory-card {
+  background-color: #2c2c2c;
+  color: #eee;
+  box-shadow: none;
+}
+
+/* Cartas encontradas no tema escuro */
+
+.dark-mode .memory-card.matched {
+  background-color: #388e3c;
+  color: #c8e6c9;
+}
+
+/* Hover para cartas não encontradas no tema escuro */
+
+.dark-mode .memory-card:hover:not(.matched) {
+  background-color: #b71c1c;
+  color: #fff;
+}
+
+/* Ajustes para telas pequenas: container menor, botões em linha única,
+   controles em coluna, e cartas ocupando toda largura */
+
+@media (max-width: 520px) {
+  .container {
+    padding: 15px;
+  }
+
+  button {
+    flex: 1 1 100%;
+    margin: 8px 0;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  #memory-game {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+}

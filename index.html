@@ -1,0 +1,95 @@
+<!--  
+  
+  Este projeto tem como objetivo desenvolver uma página web, acessível online através de um repositório público no GitHub,
+  que permita aos utilizadores gerar senhas seguras de forma automática. A aplicação oferece ainda a opção de descarregar
+  a senha num ficheiro de texto (.txt), contribuindo para uma melhor organização e armazenamento seguro por parte dos utilizadores.
+
+  Para além disso, o site inclui funcionalidades como a alternância entre modo claro e escuro, suporte aos idiomas português e inglês,
+  e um jogo da memória com enfoque educativo, que visa reforçar boas práticas de cibersegurança. A principal finalidade deste projeto
+  é sensibilizar os utilizadores para a importância da criação e gestão segura de palavras-passe no ambiente digital.
+
+  -->
+  
+
+  <!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> Gerador de Senhas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 id="title">Li Security -Gerador de senhas</h1>
+
+    <!-- Seleção de idioma e botão modo escuro/claro -->
+    <div class="top-controls">
+      <label for="language-select" id="language-label">Idioma / Language</label>
+      <select id="language-select">
+        <option value="pt" selected>Português</option>
+        <option value="en">English</option>
+      </select>
+      <button id="theme-toggle" title="Alternar tema">🌙</button>
+    </div>
+
+    <!-- Formulário de opções -->
+    <form id="customize-form" autocomplete="off">
+      <h2 id="customize-title">Personalize a sua senha</h2>
+
+      <div class="form-group">
+        <input type="checkbox" id="uppercase" checked />
+        <label for="uppercase" id="label-uppercase">Incluir letras maiúsculas (A-Z)</label>
+      </div>
+
+      <div class="form-group">
+        <input type="checkbox" id="lowercase" checked />
+        <label for="lowercase" id="label-lowercase">Incluir letras minúsculas (a-z)</label>
+      </div>
+
+      <div class="form-group">
+        <input type="checkbox" id="numbers" checked />
+        <label for="numbers" id="label-numbers">Incluir números (0-9)</label>
+      </div>
+
+      <div class="form-group">
+        <input type="checkbox" id="symbols" />
+        <label for="symbols" id="label-symbols">Incluir símbolos (!@#...)</label>
+      </div>
+
+      <div class="form-group length-group">
+        <label for="length" id="label-length">Comprimento da senha</label>
+        <input type="number" id="length" min="8" max="64" value="16" />
+      </div>
+      <p id="length-info"></p>
+    </form>
+
+    <!-- Área da senha gerada com ícone de olho -->
+    <div id="password-container">
+      <div id="password-display" aria-live="polite">A senha aparecerá aqui</div>
+      <button id="toggle-visibility" aria-label="Mostrar senha" title="Mostrar/Ocultar senha">👁️</button>
+    </div>
+
+    <!-- Botões centrais -->
+    <div class="buttons-container">
+      <button id="generate">🔐 Gerar Senha</button>
+      <button id="copy">📋 Copiar</button>
+      <button id="export">💾 Exportar para .txt</button>
+    </div>
+
+    <!-- Indicador de força da senha -->
+    <div id="strength">Nível de Segurança: —</div>
+
+    <!-- Jogo da memória interativo -->
+    <section id="memory-container">
+      <h2 id="memory-title">Jogo de Memória: Dicas para Senhas Seguras</h2>
+      <p id="memory-description">
+        Clique nos pares relacionados para aprender sobre boas práticas de senhas.
+      </p>
+      <div id="memory-game"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
